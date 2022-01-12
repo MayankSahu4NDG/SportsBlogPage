@@ -1,0 +1,60 @@
+<%- include('partials/header') %>
+    <a href="/sports/new" class="item"><i class="plus icon"></i><b>Add Sport</b></a>
+    <a href="/sports" class="item"><i class="backward icon"></i><b>Go Back</b></a>
+<%- include('partials/navbar') %>
+
+<% if(!(currentUser && idSports.author.id.equals(currentUser.id))){ %>
+  <div class="container ui info message">
+    <p><b>Edit and Delete</b> features are available only for postSubmitter- <b><%= idSports.author.username %></b></p>
+  </div>
+<% } else{ %>
+<div style="margin: 100px;"></div>
+<% } %>
+
+<div class="ui placeholder segment" id="container">
+    <div class="ui two column very relaxed stackable grid">
+      <div class="column">
+        <div class="ui form">
+          <h1 class="field" style="font-size: 4em; margin-bottom: 10px;">
+              <b><%= idSports.name %></b>
+          </h1>
+          <div class="field" style="margin-bottom: 4px;">
+            <b>Submitted by: </b><%= idSports.author.username %>
+          </div>
+          <div class="field">
+            <b>Created On: </b><%= idSports.date %>
+          </div>
+          <div class="field">
+            <% if(currentUser && idSports.author.id.equals(currentUser.id)){ %>
+              <a href="/sports/<%= idSports.id %>/edit" class="ui green basic button">Edit</a>
+              <form action="/sports/<%= idSports.id %>?_method=DELETE" method="POST">
+                <button class="ui red basic button" style="margin-top: 5px;">Remove this Sports</button>
+              </form>
+            <% } else{ %>
+              <a class="ui green basic button">Edit</a>
+                <button class="ui red basic button" style="margin-top: 5px;">Remove this Sports</button>
+            <% } %>
+        </div>
+        </div>
+      </div>
+      <div class="middle aligned column ui medium image">
+          <img id="imageSize2" src=" <%= idSports.image %> ">
+      </div>
+    </div>
+    <p><%= idSports.story %></p>
+    <a>Comments...</a>
+    <form action="/sports/<%= idSports.id %>/comments" method="POST">
+      <div class="ui icon input">
+        <input type="text" name="comment" placeholder="Write a Comment!" required style="width: 300px;">
+      </div>
+    </form>
+    <ul>
+      <% idSports.comment.forEach(function(file){ %>
+        <li style="margin-bottom: 7px;">
+          <strong><%= file.author.username %></strong> - <%= file.comment %>
+        </li>
+      <% }); %>
+    </ol>
+  </div>
+
+<%- include('partials/footer') %>

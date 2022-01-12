@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+    <a href="/sports/new" class="item"><i class="plus icon"></i><b>Add Sport</b></a>
+</div>
+
+<% if(error && error.length>0){ %>
+    <div class="container ui red message"><%= error %></div>
+<% } %>
+
+<div class="ui placeholder segment" id="container" style="margin-top: 40px; font-size: 1.5em;">
+    <h1 style="text-align: center; font-size: 1.7em;"><b>SignUp /Register</b></h1>
+    
+    <form action="/register" method="POST">
+        <div class="field" style="margin-top: 15px;">
+            <label style="margin-bottom: 100px;">Username</label>
+            <div class="ui icon input" style="margin-top: 3px;">
+                <input type="text" name="username" placeholder="username" required>
+            </div>
+        </div>
+        <div class="field" style="margin-top: 15px;">
+            <label style="margin-bottom: 100px;">Password</label>
+            <div class="ui icon input" style="margin-top: 3px;">
+                <input type="password" name="password" placeholder="password" required>
+            </div>
+        </div>
+        <div class="field" style="margin-top: 15px;">
+            <button class="ui green big label">SignUp</button>
+            <a class="ui blue large label" href="/login">Login</a>
+        </div>
+    </form>
+
+  </div>
+
+<%- include('partials/footer') %>

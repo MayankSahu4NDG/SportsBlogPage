@@ -1,0 +1,23 @@
+header {
+    margin: 2% 10%;
+}
+#logo {
+    font-size: 2em;
+    padding: 10px;
+    color: mediumseagreen;
+}
+h1 {
+    color: mediumseagreen;
+}
+#container {
+    margin: 5px 9%;
+}
+#columnChange {
+    padding-left: 0px;
+}
+#imageSize {
+    width: 300px;
+}
+#imageSize2 {
+    width: 400px;
+}

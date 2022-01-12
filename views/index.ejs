@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+    <a href="/sports/new" class="item"><i class="plus icon"></i><b>Add Sport</b></a>
+<%- include('partials/navbar') %>
+
+<header>
+    <h1><b>My Sports List -</b></h1>
+    <p class="tagline"><em><span style="color: red;">Note:</span> Please login for better experience.(These accounts are temporary)</em></p>
+</header>
+
+    <% allSports.forEach(function(file){ %>
+
+        <div class="ui placeholder segment" id="container">
+            <div id="columnChange" class="ui two column very relaxed stackable grid">
+              <div id="columnChange" class="column">
+                <div class="ui form">
+                  <h1 class="field">
+                      <b><%= file.name %></b>
+                  </h1>
+                  <div class="field">
+                    <b>Submitted by: <%= file.author.username %></b>
+                  </div>
+                  <div class="field">
+                    <p><%= file.description %></p>
+                  </div>
+                  <div class="field">
+                    <a href="/sports/<%= file.id %>" class="ui blue basic button">More Info</a>
+                </div>
+                </div>
+              </div>
+              <div id="columnChange" class="middle aligned column">
+                  <img id="imageSize" src=" <%= file.image %> ">
+              </div>
+            </div>
+          </div>
+
+    <% }); %>
+<p>NOTE: All the images and texts are copied for learning purpose</p>
+
+<%- include('partials/footer') %>

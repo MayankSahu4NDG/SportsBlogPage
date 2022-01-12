@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+    <a href="/sports" class="item"><i class="backward icon"></i><b>Go Back</b></a>
+<%- include('partials/navbar') %>
+
+
+<div class="ui placeholder segment" id="container" style="margin-top: 40px; font-size: 1.5em;">
+    <h1 style="text-align: center; font-size: 1.7em; padding-left: 90px;"><b>Add a new Sport</b></h1>
+    
+    <form action="/sports" method="POST">
+        <div class="field" style="margin-top: 15px;">
+            <div class="ui icon input" style="margin-top: 3px;">
+              <input type="text" name="name" placeholder="Sports Name">
+            </div>
+        </div>
+        <div class="field" style="margin-top: 15px;">
+            <div class="ui icon input" style="margin-top: 3px;">
+              <input type="text" name="image" placeholder="Image url">
+            </div>
+        </div>
+        <div class="field" style="margin-top: 15px;">
+            <div class="ui icon input" style="margin-top: 3px;">
+              <input type="text" name="date" placeholder="Date of Submission">
+            </div>
+        </div>
+        <div class="field" style="margin-top: 15px;">
+            <div class="ui icon input" style="margin-top: 3px;">
+              <input type="text" name="description" placeholder="A little Quote">
+            </div>
+        </div>
+        <div class="field" style="margin-top: 15px;">
+            <div class="ui icon input" style="margin-top: 3px;">
+              <input type="text" name="story" placeholder="More details about the Sports">
+            </div>
+        </div>
+        <div class="field" style="margin-top: 15px;">
+            <button class="ui inverted green button">Submit</button>
+          </div>
+    </form>
+
+
+  </div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,17 @@
+<div class="right menu">
+    <% if(!currentUser){ %>
+      <a href="/register" class="item"><i class="user plus icon"></i><b>SignUp</b></a>
+      <a href="/login" class="item"><i class="sign-in icon"></i><b>login</b></a>
+    <% } else { %>
+      <a href="#" class="item" style="color: rgb(128, 163, 0);"><b><%= currentUser.username %> logged in</b></a>
+      <a href="/logout" class="item"><i class="sign-out icon"></i><b>logout</b></a>
+    <% } %>
+  </div>    
+</div>
+
+<% if(error && error.length>0){ %>
+  <div class="container ui red message"><%= error %></div>
+<% } %>
+<% if(success && success.length>0){ %>
+  <div class="container ui green message"><%= success %></div>
+<% } %>

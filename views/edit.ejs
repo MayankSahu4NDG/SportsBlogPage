@@ -1,0 +1,48 @@
+<%- include('partials/header') %>
+    <a href="/sports/<%= editSports.id %>?_method=PUT " class="item"><i class="backward icon"></i><b>Go Back</b></a>
+<%- include('partials/navbar') %>
+
+
+<div class="ui placeholder segment" id="container" style="margin-top: 40px; font-size: 1.5em;">
+    <h1 style="text-align: center; font-size: 1.7em;"><b>Edit Sport- <%= editSports.name %></b></h1>
+    
+    <form action="/sports/<%= editSports.id %>?_method=PUT" method="POST">
+        <div class="field" style="margin-top: 15px;">
+            <label style="margin-bottom: 100px;">Sports Name</label>
+            <div class="ui icon input" style="margin-top: 3px;">
+              <input type="text" name="name" style="color:mediumturquoise;" value="<%= editSports.name %>">
+            </div>
+        </div>
+        <div class="field" style="margin-top: 15px;">
+            <label>Image</label>
+            <div class="ui icon input" style="margin-top: 3px;">
+              <input type="text" name="image" style="color:mediumturquoise;" value="<%= editSports.image %>">
+            </div>
+        </div>
+        <div class="field" style="margin-top: 15px;">
+            <label>Date</label>
+            <div class="ui icon input" style="margin-top: 3px;">
+              <input type="text" name="date" style="color:mediumturquoise;" value="<%= editSports.date %>">
+            </div>
+        </div>
+        <div class="field" style="margin-top: 15px;">
+            <label>Description</label>
+            <div class="ui icon input" style="margin-top: 3px;">
+              <input type="text" name="description" style="color:mediumturquoise;" value="<%= editSports.description %>">
+            </div>
+        </div>
+        <div class="field" style="margin-top: 15px;">
+            <label>Story</label>
+            <div class="ui icon input" style="margin-top: 3px;">
+              <input type="text" name="story" style="color:mediumturquoise;" value="<%= editSports.story %>">
+            </div>
+        </div>
+        <div class="field" style="margin-top: 15px;">
+            <button class="ui inverted green button">Update</button>
+          </div>
+    </form>
+
+
+  </div>
+
+<%- include('partials/footer') %>
